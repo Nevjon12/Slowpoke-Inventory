@@ -4,7 +4,9 @@
   "description": "Solo Project for Codesmith Mid-Portion",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/backend/server , webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/Nevjon12/Codesmith-Solo-Project#readme",
   "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -27,6 +31,7 @@
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.22",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
