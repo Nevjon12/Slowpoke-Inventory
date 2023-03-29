@@ -12,15 +12,16 @@ inventoryController.controllerTest = (req, res, next) => {
 }
 
 inventoryController.addInsulation = (req,res,next) => {
+    console.log(req.body)
     const newInsulation = models.Insulation;
     newInsulation.create({
-        name: 'R11 16 UNF KNAUF',
-        rating: 11,
-        type: 'UNFACED',
-        width: 16,
-        length: 96,
-        brand: 'KNAUF',
-        squareFootage: 256,
+        name: req.body.name,
+        rating: req.body.rating,
+        type: req.body.type,
+        width: req.body.width,
+        length: req.body.length,
+        brand: req.body.brand,
+        squareFootage: req.body.squareFootage,
     }
     );
     next();

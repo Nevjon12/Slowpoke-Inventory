@@ -6,7 +6,7 @@ const inventoryController = require('../controllers/inventoryController');
 const router = express.Router();
 
 router.get('/', inventoryController.controllerTest, (req,res) => {
-    res.status(200).send('Get request succesful')
+    res.status(200).sendFile('index.html', {root: 'src/client'})
 })
 
 router.post('/',inventoryController.addInsulation , (req,res) => {
