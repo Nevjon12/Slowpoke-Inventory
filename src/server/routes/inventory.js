@@ -9,15 +9,15 @@ router.get('/', inventoryController.controllerTest, (req,res) => {
     res.status(200).sendFile('index.html', {root: 'src/client'})
 })
 
-router.post('/',inventoryController.addInsulation , (req,res) => {
+router.post('/', inventoryController.addInsulation , (req,res) => {
     res.status(200).send('Post request succesful')
 })
 
-router.put('/:id', (req,res) => {
+router.put('/', (req,res) => {
     res.status(200).send(`Put/Update request to ${req.params.id} succesful`)
 })
 
-router.delete('/:id', (req,res) => {
+router.delete('/', (req,res) => {
     res.status(200).send(`Delete request to ${req.params.id} succesful`)
 })
 
