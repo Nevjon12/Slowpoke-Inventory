@@ -11,7 +11,7 @@ mongoose.connect(MONGO_URI)
 //Add typing and add required, thats wjhy you're getting 
 insulationSchema = new Schema({
     name: String,
-    rating: Number,
+    rating: String,
     type: String,
     width: Number,
     length: Number,

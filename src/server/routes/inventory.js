@@ -9,16 +9,16 @@ router.get('/', inventoryController.controllerTest, (req,res) => {
     res.status(200).sendFile('index.html', {root: 'src/client'})
 })
 
-router.post('/', inventoryController.addInsulation , (req,res) => {
+router.post('/create', inventoryController.addInsulation , (req,res) => {
     res.status(200).send('Post request succesful')
 })
 
-router.put('/', (req,res) => {
-    res.status(200).send(`Put/Update request to ${req.params.id} succesful`)
+router.patch('/update/:name-:rating-:type-:width-:length-:brand-:squareFootage', inventoryController.updateInsulation ,  (req,res) => {
+    res.status(200).send(`Put/Update request to ${req.params.name} succesful`)
 })
 
-router.delete('/', (req,res) => {
-    res.status(200).send(`Delete request to ${req.params.id} succesful`)
+router.delete('/delete/:name-:rating-:type-:width-:length-:brand-:squareFootage',inventoryController.deleteAllInsulationByType, (req,res) => {
+    res.status(200).send(`Delete request to ${req.params.name} succesful`)
 })
 
 
