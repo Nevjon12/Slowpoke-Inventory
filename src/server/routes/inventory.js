@@ -5,8 +5,8 @@ const inventoryController = require('../controllers/inventoryController');
 //begin new instance of a router
 const router = express.Router();
 
-router.get('/', inventoryController.controllerTest, (req,res) => {
-    res.status(200).sendFile('index.html', {root: 'src/client'})
+router.get('/data', inventoryController.controllerTest, (req,res) => {
+    res.status(200).json({Inventory: res.locals.data})
 })
 
 router.post('/create', inventoryController.addInsulation , (req,res) => {
@@ -18,7 +18,7 @@ router.patch('/update/:name-:rating-:type-:width-:length-:brand-:squareFootage',
 })
 
 router.delete('/delete/:name-:rating-:type-:width-:length-:brand-:squareFootage',inventoryController.deleteAllInsulationByType, (req,res) => {
-    res.status(200).send(`Delete request to ${req.params.name} succesful`)
+    res.status(200).send(`Delete request for ${req.params.name} succesful`)
 })
 
 

@@ -16,7 +16,7 @@ insulationSchema = new Schema({
     width: Number,
     length: Number,
     brand: String,
-    squareFootage: Number,
+    squareFootage: Number
 });
 
 

@@ -1,13 +1,14 @@
 // require express
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const PORT = 3000;
 const path = require('path');
 
 
-
-// app.use(express.static(path.join('src/client')));
-app.use(express.json())
+app.use(cors());
+app.use(express.static(path.resolve(__dirname, '../dist')));
+app.use(express.json());
 
 //require routes:
 
@@ -18,7 +19,7 @@ const invRouter = require('./routes/inventory.js')
 //   return res.status(200).sendFile('index.html', {root: 'src/client'});
 // });
 
-app.use('/', invRouter);
+app.use('/inventory', invRouter);
 
 
 //ADD catch all

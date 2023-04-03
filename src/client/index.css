@@ -1,0 +1,57 @@
+
+.mainContainer{
+    display: flex;
+    background-color: #feb1dd;
+    border-radius: 25px;
+    text-align: center;
+    margin: 25px;
+    padding-bottom: 25px;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    background-color: blanchedalmond;
+    border-radius: 25px;
+    margin: 5%;
+
+}
+
+.subContainer{
+    
+    border-radius: 6px;
+    background-color: #e1c2f6;
+    margin: 10px;
+    padding: 2%;
+
+}
+
+.subContainerCurrent{
+    display: ;
+    align-items: center;
+    background-color: blanchedalmond;
+    margin: 10px;
+    border-radius: 25px;
+    margin: 5%;
+}
+.component{
+    display: grid;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    border-radius: 10px;
+    border: 15px;
+    border-style:groove ;
+    border-color: #585858;
+    margin: 10px;
+    background-color: #ffffff;
+    
+}
+
+
+

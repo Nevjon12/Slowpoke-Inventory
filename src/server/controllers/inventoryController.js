@@ -6,8 +6,10 @@ const models = require('../models/itemModels');
 
 const inventoryController = {};
 
-inventoryController.controllerTest = (req, res, next) => {
-    console.log('controller is working!!');
+inventoryController.controllerTest = async (req, res, next) => {
+    const items = await models.Insulation.find();
+    res.locals.data = items;
+    console.log('Data gathered');
     next();
 }
 
@@ -25,6 +27,7 @@ inventoryController.addInsulation = (req,res,next) => {
             length: req.body.length,
             brand: req.body.brand,
             squareFootage: req.body.squareFootage,
+            bundleQuantity: req.body.bundleQuantity
         });
         next();
     }catch(err) {
@@ -57,7 +60,7 @@ inventoryController.updateInsulation = async (req, res, next) => {
                 width : req.params.width,
                 length: req.params.length,
                 brand: req.params.brand,
-                squareFootage: req.params.squareFootage
+                squareFootage: req.params.squareFootage,
             },
             {   
                 name: req.body.name, 
@@ -66,7 +69,7 @@ inventoryController.updateInsulation = async (req, res, next) => {
                 width : req.body.width,
                 length: req.body.length,
                 brand: req.body.brand,
-                squareFootage: req.body.squareFootage
+                squareFootage: req.body.squareFootage,
             },
             {new: true},
             );
