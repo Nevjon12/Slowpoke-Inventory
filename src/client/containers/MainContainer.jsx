@@ -12,14 +12,14 @@ export default function MainContainer(){
         
         <div className="mainContainer">
 
-        <h1 className='mainText'>
-            Slowpoke's Insulation Inventory<br/>
-            <p>Imagine that it works fully.</p>
-        </h1>
-        
-        <FullInventoryContainer/>
-        <ManipulationContainer/>
-
+            <h1 className='mainText'>
+                Slowpoke's Insulation Inventory<br/>
+                <p>Imagine that it works fully.</p>
+            </h1>
+            <div>
+                <FullInventoryContainer/>
+                <ManipulationContainer/>
+            </div>
         </div>
 
     )
