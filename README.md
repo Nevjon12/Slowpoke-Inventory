@@ -1,2 +1,2 @@
-# Codesmith-Solo-Project
-Solo Project for Codesmith Mid-Portion
+# Slowpoke Inventory
+Invenotry System for Construction Materials
