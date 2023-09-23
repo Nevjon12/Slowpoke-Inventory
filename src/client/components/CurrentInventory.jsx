@@ -11,11 +11,12 @@ export default function CurrentInventory(){
     useEffect(() => { 
         const data = async()=>{
             const results = await inventoryAPI.get('data');
-            console.log(results.data.Inventory, typeof(results))
+            console.log('useEffect?',results.data.Inventory, typeof(results))
         }
         data();
     }, []);
 
+    
     console.log('it worked', inventoryList)
 
     return (

@@ -4,9 +4,9 @@
 //require our models
 const models = require('../models/itemModels');
 
-const inventoryController = {};
+const insulationController = {};
 
-inventoryController.controllerTest = async (req, res, next) => {
+insulationController.controllerTest = async (req, res, next) => {
     const items = await models.Insulation.find();
     res.locals.data = items;
     console.log('Data gathered');
@@ -15,7 +15,7 @@ inventoryController.controllerTest = async (req, res, next) => {
 
 
 
-inventoryController.addInsulation = (req,res,next) => {
+insulationController.addInsulation = (req,res,next) => {
     try{
         console.log(req.body)
         const newInsulation = models.Insulation;
@@ -36,7 +36,7 @@ inventoryController.addInsulation = (req,res,next) => {
 };
 
 
-inventoryController.filterInsulationByRating = (req, res, next) => {
+insulationController.filterInsulationByRating = (req, res, next) => {
     // req.body should contain the R-rating
     // this middleware should filter and show all 
     try{
@@ -48,7 +48,7 @@ inventoryController.filterInsulationByRating = (req, res, next) => {
 };
 
 
-inventoryController.updateInsulation = async (req, res, next) => {
+insulationController.updateInsulation = async (req, res, next) => {
     try{
         console.log(JSON.stringify(req.params));
         console.log(JSON.stringify(req.body))
@@ -79,7 +79,7 @@ inventoryController.updateInsulation = async (req, res, next) => {
     };
 };
 
-inventoryController.deleteAllInsulationByType = async (req, res, next) => {
+insulationController.deleteAllInsulationByType = async (req, res, next) => {
     try{
         await models.Insulation.findOneAndDelete(
             {   
@@ -99,4 +99,4 @@ inventoryController.deleteAllInsulationByType = async (req, res, next) => {
 }
 
 
-module.exports = inventoryController;
+module.exports = insulationController;
