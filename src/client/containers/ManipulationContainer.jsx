@@ -8,15 +8,18 @@ import SearchInventory from '../components/SearchInventory';
 export default function ManipulationContainer(){
 
     return (
-        <div className="container">
+        <div className='container'>
 
-        <h1>Inventory Manipulator</h1>
-            <div className='subContainer'>
-                <AddInventory/>
+            <div className="subContainer" >
+            <>
+            <h1>Inventory Manipulator</h1>
+            </>
+            
+            <AddInventory/>
+               
+            <SearchInventory/>
             </div>
-            <div className='subContainer'>
-                <SearchInventory/>
-            </div>
+            
         </div>
 
     )
