@@ -7,8 +7,8 @@
     padding-bottom: 25px;
 }
 
-.container{
-    display: flex;
+.subContainer{
+    display: inline-flex;
     text-align: center;
     background-color: blanchedalmond;
     border-radius: 25px;
@@ -16,17 +16,17 @@
 
 }
 
-.subContainer{
+.subContainerChild{
     
-    border-radius: 6px;
+    border: 6px;
     background-color: #e1c2f6;
     margin: 2%;
+    height:min-content
 
 }
 
-.subContainerCurrent{
-    display: grid;
-    align-items: center;
+.subContainerParent{
+    display: flow-root;
     background-color: blanchedalmond;
     margin: 2%;
     border-radius: 25px;
@@ -51,5 +51,8 @@ button{
     
 }
 
+input{
+    width:fit-content;
+}
 
 
