@@ -10,12 +10,13 @@ mongoose.connect(MONGO_URI)
 //Add typing and add required, thats wjhy you're getting 
 insulationSchema = new Schema({
     name: String,
-    rating: String,
+    rating: Number,
     type: String,
     width: Number,
     length: Number,
     brand: String,
-    squareFootage: Number
+    squareFootage: Number,
+    bundleSize: Number
 });
 
 
@@ -29,7 +30,7 @@ const Insulation = mongoose.model('insulation', insulationSchema);
 
 
 module.exports = {
-    Insulation 
+    Insulation
 }
 
 

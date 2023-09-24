@@ -14,7 +14,6 @@ export default function MainContainer(){
 
             <h1 className='mainText'>
                 Slowpoke's Insulation Inventory<br/>
-                <p>Imagine that it works fully.</p>
             </h1>
             <div>
                 <FullInventoryContainer/>

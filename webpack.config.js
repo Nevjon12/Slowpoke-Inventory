@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
+
 module.exports = {
     mode: 'development',
     devServer: {
@@ -12,7 +13,11 @@ module.exports = {
         hot: true,
         liveReload : true,
         proxy: {
-            '/inventory' : 'http://localhost:3000',
+            '/' :
+            { 
+            target: 'http://localhost:8080',
+            router: ()=> 'http://localhost:3000'
+            }
         },
         historyApiFallback: true,
     },
@@ -46,7 +51,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+                use: ['style-loader' , 'css-loader' ],
             }
         ]
     },
