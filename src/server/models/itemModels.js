@@ -1,8 +1,9 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const MONGO_URI = 'mongodb+srv://nevarezjonathan11:UKvezyj7AEsJopUk@cluster0.tnillch.mongodb.net/?retryWrites=true&w=majority';
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
+
 .then(console.log("Succesfully connected to our database!"))
 .catch((err) => {console.log(err, 'connection to database failed')});
 
