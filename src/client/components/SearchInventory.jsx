@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 
 export default function SearchInventory(){
 
     return (
-        <div className="subComponent">
+        <div className="subContainerChild">
 
             <h4>Inventory Lookup</h4>
             <form className="Lookup Form">

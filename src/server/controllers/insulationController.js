@@ -7,12 +7,13 @@ Current models:
 - Insulation
 */ 
 
-const models = require('../models/itemModels'); 
+const models = require('../models/itemModels');
+const INS = models.Insulation;
 
 const insulationController = {};
 
 insulationController.obtainInventory = async (req, res, next) => {
-    const items = await models.Insulation.find();
+    const items = await INS.find();
     res.locals.data = JSON.stringify(items);
     console.log(res.locals.data)
     next();
@@ -23,7 +24,7 @@ insulationController.obtainInventory = async (req, res, next) => {
 insulationController.addInsulation = async (req,res,next) => {
     try{
         console.log('form:',req.body)
-        const newInsulation = models.Insulation;
+        const newInsulation = INS;
         await newInsulation.create({
             name: req.body.name,
             rating: req.body.rating,
@@ -59,7 +60,7 @@ insulationController.filterInsulationByRating = (req, res, next) => {
 insulationController.updateInsulation = async (req, res, next) => {
     try{
         console.log(JSON.stringify(req.body))
-        await models.Insulation.findOneAndUpdate(
+        await INS.findOneAndUpdate(
             {   
                 name: req.body.name, 
                 rating: req.body.rating,
@@ -88,7 +89,7 @@ insulationController.updateInsulation = async (req, res, next) => {
 
 insulationController.deleteAllInsulationByType = async (req, res, next) => {
     try{
-        await models.Insulation.findOneAndDelete(
+        await INS.findOneAndDelete(
             {   
                 name: req.body.name, 
                 rating: req.body.rating,
@@ -103,6 +104,17 @@ insulationController.deleteAllInsulationByType = async (req, res, next) => {
     }catch(err){
         next(err);
     };
+};
+
+//Clear FUll Inventory
+insulationController.clearInventory = async (req, res, next)=>{
+    try {
+        console.log('Clearing Inventory');
+        next();
+    } catch (err) {
+        next(err)
+    }
+
 }
 
 

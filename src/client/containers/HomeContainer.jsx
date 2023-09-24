@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import ManipulationContainer from '../containers/ManipulationContainer';
-import FullInventoryContainer from '../containers/FullInventoryContainer';
+import ManipulationContainer from './ManipulationContainer';
+import FullInventoryContainer from './FullInventoryContainer';
 
 
 
 
-export default function MainContainer(){
+export default function HomeContainer(){
 
     return (
         
         <div className="mainContainer">
 
             <h1 className='mainText'>
-                Slowpoke's Insulation Inventory<br/>
+                Insulation Inventory<br/>
             </h1>
             <div>
                 <FullInventoryContainer/>
