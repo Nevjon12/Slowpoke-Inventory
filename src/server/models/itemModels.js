@@ -1,9 +1,9 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
-const { testSchema } = require('../controllers/inventoryController');
 const { Schema } = mongoose;
-const MONGO_URI = 'mongodb+srv://mongojohn:learningmongoftw14@inventory.ylszatr.mongodb.net/?retryWrites=true&w=majority';
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
+
 .then(console.log("Succesfully connected to our database!"))
 .catch((err) => {console.log(err, 'connection to database failed')});
 
@@ -11,12 +11,13 @@ mongoose.connect(MONGO_URI)
 //Add typing and add required, thats wjhy you're getting 
 insulationSchema = new Schema({
     name: String,
-    rating: String,
+    rating: Number,
     type: String,
     width: Number,
     length: Number,
     brand: String,
-    squareFootage: Number
+    squareFootage: Number,
+    bundleSize: Number
 });
 
 
@@ -30,7 +31,7 @@ const Insulation = mongoose.model('insulation', insulationSchema);
 
 
 module.exports = {
-    Insulation 
+    Insulation
 }
 
 

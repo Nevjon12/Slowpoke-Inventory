@@ -1,25 +1,28 @@
-// require express
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const PORT = 3000;
 const path = require('path');
+const bodyParser = require('body-parser');
 
 
+
+//App dependencies
 app.use(cors());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
+app.use(bodyParser.text())
+
 app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use(express.json());
 
-//require routes:
+//Set Router:
 
-const invRouter = require('./routes/inventory.js')
+const invRouter = require('./routes/inventoryRouter.js');
 
-//SERVE FRONT END
-// app.get('/', (req, res) => {
-//   return res.status(200).sendFile('index.html', {root: 'src/client'});
-// });
-
-app.use('/inventory', invRouter);
+//Route
+app.use('/', invRouter);
 
 
 //ADD catch all
