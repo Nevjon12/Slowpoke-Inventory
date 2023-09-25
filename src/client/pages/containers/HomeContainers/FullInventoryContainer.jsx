@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import CurrentInventory from '../components/CurrentInventory';
+import CurrentInventory from '../../components/HomeComponents/CurrentInventory';
 
 
 
-export default function ManipulationContainer(){
+export default function FullInventoryContainer(){
 
     return (
         <div className="subContainerParent">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+
 
 const faces = ['KRAFT', 'UNFACED', 'FOIL', 'ENCAPSULATED'];
 const ratings = [11, 13, 15, 19, 21, 30, 38, 49]

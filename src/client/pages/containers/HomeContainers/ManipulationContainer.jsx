@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import AddInventory from '../components/AddInventory';
-import SearchInventory from '../components/SearchInventory';
-
+import AddInventory from '../../components/HomeComponents/AddInventory';
+import SearchInventory from '../../components/HomeComponents/SearchInventory';
 
 
 export default function ManipulationContainer(){

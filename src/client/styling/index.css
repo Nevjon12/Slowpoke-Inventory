@@ -1,11 +1,14 @@
+body{
+    margin: 0%;
+}
+
 .mainContainer{
     display: grid;
     background-color: #feb1dd;
-    border-radius: 25px;
     text-align: center;
-    margin: 2%;
     padding-bottom: 25px;
 }
+
 
 .subContainer{
     display: inline-flex;

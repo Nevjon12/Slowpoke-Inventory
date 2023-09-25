@@ -11,15 +11,11 @@ module.exports = {
             directory: path.join(__dirname, './src/client'),
         },
         port: 8080,
-        open: true,
         hot: true,
         liveReload : true,
         proxy: {
             '/' :
-            { 
-            target: 'http://localhost:8080',
-            router: ()=> 'http://localhost:3000'
-            }
+             'http://localhost:3000',
         },
         historyApiFallback: true,
     },
@@ -30,7 +26,8 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js'  
+        filename: 'bundle.js',
+        publicPath: '/'  
     },
 
     plugins: [

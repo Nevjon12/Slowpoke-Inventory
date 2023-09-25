@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-import ManipulationContainer from './ManipulationContainer';
-import FullInventoryContainer from './FullInventoryContainer';
+import FullInventoryContainer from './containers/HomeContainers/FullInventoryContainer';
+import ManipulationContainer from './containers/HomeContainers/ManipulationContainer';
+import NavBar from './components/NavBarComponents/NavBar';
 
 
 
-
-export default function HomeContainer(){
+export default function Home(){
 
     return (
         
         <div className="mainContainer">
-
             <h1 className='mainText'>
                 Insulation Inventory<br/>
             </h1>
